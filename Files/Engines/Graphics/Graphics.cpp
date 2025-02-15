@@ -2,7 +2,7 @@
 * 
 * - Graphics function definitions
 * 
-* FOR IN DEPTH DOCUMENTATION PLEASE SEE THE GITHUB REPO */
+* FOR IN DEPTH DOCUMENTATION PLEASE SEE Graphics.md ON THE GITHUB */
 
 //TODO: github documentation
 
