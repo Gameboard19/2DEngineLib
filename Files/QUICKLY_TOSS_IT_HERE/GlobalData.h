@@ -47,11 +47,11 @@ namespace ActorData {
 	//this exist to make it easier to pass the relevant information to the fields that require it.
 	struct SHAPE_DATA {
 		//pos serves to provide easy access to the midpoint of the shape
-		D2D1_POINT_2F			pos;
-		SHAPE_TYPE				type;
+		D2D1_POINT_2F pos;
+		SHAPE_TYPE type;
 		union {
-			D2D1_RECT_F			rect;
-			D2D1_ELLIPSE		ellipse;
+			D2D1_RECT_F rect;
+			D2D1_ELLIPSE ellipse;
 		};
 	};
 
@@ -64,18 +64,18 @@ namespace ActorData {
 	};
 
 	struct C_DATA_IN {
-		bool					didCollide; //tells actor if it should actually listen
-		D2D1_POINT_2F			newPos;
-		PhysicsData::VELOCITY	newVelocity;
+		bool didCollide; //tells actor if it should actually listen
+		D2D1_POINT_2F newPos;
+		PhysicsData::VELOCITY newVelocity;
 	};
 	//these functions exist to make life easier
 	SHAPE_DATA ShapeData(
-		D2D1_POINT_2F			pos,
-		D2D1_RECT_F				rect
+		D2D1_POINT_2F pos,
+		D2D1_RECT_F rect
 	);
 	SHAPE_DATA ShapeData(
-		D2D1_POINT_2F			pos,
-		D2D1_ELLIPSE			ellipse
+		D2D1_POINT_2F pos,
+		D2D1_ELLIPSE ellipse
 	);
 }
 
@@ -83,29 +83,29 @@ namespace PhysicsData {
 	
 
 	struct VELOCITY {
-		float					x;
-		float					y;
+		float x;
+		float y;
 	};
 
 	struct COLLISION_DATA {
-		ActorData::C_DATA_OUT	actor1_cData;
-		ActorData::C_DATA_OUT	actor2_cData;
+		ActorData::C_DATA_OUT actor1_cData;
+		ActorData::C_DATA_OUT actor2_cData;
 	};
 
 	struct COLLISION_RESULTS {
-		ActorData::C_DATA_IN	actor1_cData;
-		ActorData::C_DATA_OUT	actor2_cData;
+		ActorData::C_DATA_IN actor1_cData;
+		ActorData::C_DATA_OUT actor2_cData;
 	};
 
 	VELOCITY Velocity(
-		float					x, 
-		float					y
+		float x, 
+		float y
 	);
 }
 
 namespace GraphicsData {
 	struct SHAPE_DATA {
-		ActorData::SHAPE_DATA	shapeData;
-		D2D1_COLOR_F			color;
+		ActorData::SHAPE_DATA shapeData;
+		D2D1_COLOR_F color;
 	};
 }
